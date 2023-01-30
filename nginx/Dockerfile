@@ -1,2 +1,3 @@
 FROM nginx:latest
-COPY ./public/ /usr/share/nginx/html
+COPY ./frontend/public/ /usr/share/nginx/html
+COPY ./conf_dir/ /etc/nginx/conf.d/
