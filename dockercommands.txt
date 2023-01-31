@@ -6,11 +6,13 @@ them to the README
 // Development machine directory containing all the source files.
 
 docker run --name tmp-nginx-container -d nginx-dev
-docker cp tmp-nginx-container:/etc/nginx/nginx.conf $(pwd)/nginx/nginx.conf
+docker cp nginx-dev-test:/etc/nginx/nginx.conf $(pwd)/nginx/nginx.conf
 docker rm -f tmp-nginx-container
 
 // Run Nginx-Dev Container on port 8000 of dev machine and bind mount the configuration directory.
-docker run -it --rm -dp 8000:80 \
---mount type=bind,src="$(pwd)/nginx/conf_dir/",target=/etc/nginx/conf.d/ \
+// make sure to execute from the "frontend" directory
+docker run --rm -p 8000:80 \
+--mount type=bind,src="$(pwd)/nginx/conf.d/",target=/etc/nginx/conf.d/ \
+--mount type=bind,src="$(pwd)/public/",target=/usr/share/nginx/html \
 --name tmp-nginx-dev \
 nginx-dev
