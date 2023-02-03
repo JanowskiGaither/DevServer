@@ -3,12 +3,12 @@ const app = express()
 const port = 3000
 
 
-app.get('/', (req, res) => {
-  res.send("hello from root")
-})
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-app.get('/api', (req, res) => {
-  res.send("hello from api")
+app.post('/order', function (req, res) {
+  console.log(req.body)
+  res.json(req.body)
 })
 
 app.listen(port, () => {

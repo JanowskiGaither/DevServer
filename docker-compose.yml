@@ -4,6 +4,10 @@ services:
     image: nginx-dev
     build:
       context: ./frontend
+    volumes:
+      - ./frontend/index.html:/srv/http/example-app/index.html
+      - ./frontend/styles:/srv/http/example-app/styles
+      - ./frontend/scripts:/srv/http/example-app/scripts
     ports:
       - "8000:80"
     networks:
