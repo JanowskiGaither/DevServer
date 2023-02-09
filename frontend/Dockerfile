@@ -1,5 +1,4 @@
 FROM nginx:latest
-COPY ./index.html /srv/http/example-app/
-COPY ./styles /srv/http/example-app/styles
-COPY ./scripts /srv/http/example-app/scripts
-COPY ./nginx/conf.d/ /etc/nginx/conf.d/
+COPY ./src/dist /srv/http/example-app/src/dist
+COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
