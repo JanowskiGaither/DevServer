@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Order = require('./models/order');
+const Customer = require('./models/customer');
+const Design = require('./models/design');
 const app = express();
 const port = 3000;
 
