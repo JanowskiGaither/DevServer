@@ -5,34 +5,46 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    firstName: {
+    customerID: {
         type: String,
         required: true
     },
-    lastName: {
+    orderDescription: {
         type: String,
         required: true
     },
-    organization: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    phone: {
-        type: String,
-        required: true
-    },
-    dueDate: {
+    orderDate: {
         type: Date,
         required: true
+    },
+    requestedDeliveryDate: {
+        type: Date,
+        required: true
+    },
+    scheduledDeliveryDate: {
+        type: Date,
     },
     taxExemption: {
         type: String,
         default: 'N/A'
-    }
+    },
+    designIds: [String],
+    totalItems: {
+        type: String,
+        required: true
+    },
+    totalCost: {
+        type: String,
+        required: true
+    },
+    totalTaxes: {
+        type: String,
+        required: true
+    },
+    totalSale: {
+        type: String,
+        required: true
+    },
   });
 
 const Order = mongoose.model('Order', orderSchema);
