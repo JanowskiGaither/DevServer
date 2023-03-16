@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Vite</title>
+  </head>
+  <body>
+    <form action="/designSubmit" method="post">
+      <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <h1 class="display-4">Design Form</h1>
+        <div class="col-xl-5 col-lg-6 col-md-8 col-11 mb-3 ">
+          <hr class="border border-secondary border-3 opacity-75">
+          <label class="form-label" for="designID">Design ID</label>
+          <input class="form-control border border-dark" type="text" name="designID" id="designID" placeholder="example: CHS Baseball Hat Away 2023">
+        </div>
+
+      </div>
+    </form>
+    <script type="module" src="./design.js"></script>
+  </body>
+</html>
